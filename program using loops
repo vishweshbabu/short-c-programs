@@ -1,0 +1,109 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+	vector <int> list{};
+    char choice{};
+    do{
+        
+          
+        cout<<"\nP- Print numbers"
+        <<"\nA- Add a number"
+        <<"\nM-Display the mean of numbers"
+        <<"\nS-Displays the smallest number"
+        <<"\nL-Displays the largest number"
+        <<"\nQ- Quit"<<endl;
+        cout<<"\nEnter The Choice: ";
+        cin>>choice;
+        
+        if(choice=='p' || choice=='P'){
+            if(list.size()==0){
+                cout<<"\n[] - list is empty"<<endl;
+            }else{
+                cout<<"\n[";
+                for(auto num:list)
+                    cout<<" "<<num<<" ";
+            }cout<<"]"<<endl;    
+        }else if(choice=='a' || choice=='A'){
+            int num_to_add;
+            cout<<" \nenter a number to add"<<endl;
+            cin>>num_to_add;
+            list.push_back(num_to_add);
+            cout<<"\nthe number "<<num_to_add<<" is addded to the list"<<endl;
+            
+            }else if(choice=='M' ||choice=='m'){
+                if(list.size()==0)
+                    cout<<"\nadd atleast a number to the list so we can calculate the mean of the numbers"<<endl;
+                else{
+                    int total{};
+                    for(auto num:list)
+                        total=total+num;
+                    cout<<"\nthe mean of the numbers is: "<< static_cast<double>(total)/list.size()<<endl;
+                    }
+            }
+             else if(choice=='s' || choice=='S'){
+                 if(list.size()==0)
+                     cout<<"\nthe list is empty"<<endl;
+                 else{
+                     int smallest=list.at(0);
+                     for(auto num:list)
+                         if(num<smallest)
+                             smallest=num;
+                     cout<<"\nthe smallest number is: "<<static_cast<double>(smallest)<<endl;        
+                 }    
+             }
+             else if(choice=='l'||choice=='L'){
+                  if(list.size()==0)
+                     cout<<"\nthe list is empty"<<endl;
+                 else{
+                     int largest=list.at(0);
+                     for(auto num:list)
+                         if(num>largest)
+                             largest=num;
+                     cout<<"\nthe largest number is: "<<static_cast<double>(largest)<<endl;
+             } 
+             }
+             else if(choice=='q'||choice=='Q')
+                 cout<<"\ngoodbye"<<endl;
+             else
+                 cout<<"\nerror - try again"<<endl;
+ 
+    
+
+
+
+
+
+
+ 
+                 
+                 
+             
+                 
+                
+                
+            
+          
+               
+ 
+        
+               
+
+                
+        
+    
+    
+    
+
+    } while(choice!='q' && choice!='Q');
+        
+        
+
+        
+        
+    
+    
+ }
